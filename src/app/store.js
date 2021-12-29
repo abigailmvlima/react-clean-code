@@ -20,7 +20,7 @@ const persistConfig = {
     storage,
 }
 
-const persistedReducer = persistedReducer(persistConfig, reducers(history))
+const persistedReducer = persistReducer(persistConfig, reducers(history))
 const store = createStore(
     persistedReducer,
     composeEnhancers(applyMiddleware(...middlewares, routerMiddleware(history)))
