@@ -4,3 +4,5 @@
     - boolean = true ou false
     - date    = new Date()
     - array   = []      // exemplo de lista
+
+    https://github.com/coreybutler/nvm-windows#node-version-manager-nvm-for-windows

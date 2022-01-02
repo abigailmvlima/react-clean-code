@@ -10,4 +10,6 @@ function* execute({ current, data }) {
     yield handlers.navigate.push(current)
 }
 
-export default [takeEvery(types.states.name, execute)]
+const list = [takeEvery(types.states.name, execute)]
+
+export default list

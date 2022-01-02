@@ -21,7 +21,7 @@ const reduceState = (state = types.states.initial, action) => {
 
         case types.states.success: {
             const data = JSON.parse(
-                JSON.stringify({ ...state.data, ...action.data })
+                JSON.stringify({...state?.data, ...action.data ? action.data : {}})
             );
 
             return {

@@ -4,7 +4,7 @@ import types from './types'
 const show = (currentRoute, data) => ({
     type: types.states.name,
     current: currentRoute,
-    data,
+    data: data || {},
 })
 
 const success = (data) => ({
@@ -18,6 +18,7 @@ const error = (data) => ({
 })
 
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
     _success: success,
     _error: error,
