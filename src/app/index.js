@@ -3,11 +3,14 @@ import { PersistGate } from 'redux-persist/integration/react'
 
 import { store, persistor } from './store'
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Routes from '../routes'
+
 const App = () => {
     return (
         <Provider store={store}>
             <PersistGate loading={null} persistor={persistor}>
-                <div>teste 2</div>
+                <Routes />
             </PersistGate>
         </Provider>
     );

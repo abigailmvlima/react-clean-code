@@ -1,9 +1,13 @@
 import { memo } from 'react'
 
+import * as cmp from '../../components'
+import handlers from '../../handlers'
+
 const HomeView = () => {
     return (
-        <div>Home</div>
+        <cmp.MainMenu>
+        </cmp.MainMenu>
     )
 }
 
-export default memo(HomeView)
+export default memo(HomeView)  
