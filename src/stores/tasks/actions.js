@@ -13,7 +13,7 @@ const add = (data) => ({
 
 const edit = (data) => ({
     type: types.states.edit,
-    data
+    value: data
 })
 
 const success = (data) => ({
@@ -35,7 +35,7 @@ export default {
     add: (data) => {
         store.dispatch(add(data))
     },
-    
+
     edit: (data) => {
         store.dispatch(edit(data))
     },

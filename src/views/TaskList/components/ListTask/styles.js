@@ -8,12 +8,13 @@ export const Container = styled.div`
 	border: 1px solid black;
 	border-radius: 10px;
     padding-bottom: 30px;
+    border: 2px solid #700047;
 `
 
 export const Item = styled.div`
     display: flex;
     flex-direction: row;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #700047;
     cursor: pointer;
 
     &:hover {
@@ -28,4 +29,5 @@ export const Item = styled.div`
 export const Label = styled.div`
     display: flex;
     padding: 8px 8px;
+    font-size: 20px;
 `

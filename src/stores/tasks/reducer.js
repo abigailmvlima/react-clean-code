@@ -14,7 +14,7 @@ const reduceState = (state = types.states.initial, action) => {
         case types.states.edit: {
             return {
                 ...state,
-                data: { ...action.data },
+                value: action.value,
                 loading: true,
                 loaded: false,
                 error: false,
@@ -24,7 +24,7 @@ const reduceState = (state = types.states.initial, action) => {
 
             return {
                 ...state,
-                data:action.data,
+                data: action.data,
                 loading: false,
                 loaded: true,
                 error: false,

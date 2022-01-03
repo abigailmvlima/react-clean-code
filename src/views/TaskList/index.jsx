@@ -6,14 +6,19 @@ import { ListTask, TaskEdit } from './components'
 
 const TaskList = () => {
 
+	const [itemTaskEdit, setItemTaskEdit] = useState()
+
 	useEffect(() => {
 		actions.tasks.list()
 	}, [])
 
+	const sendProps = { itemTaskEdit, setItemTaskEdit }
+
+
 	return (
 		<cmp.MainMenu>
-			<TaskEdit />
-			<ListTask />
+			<TaskEdit {...sendProps} />
+			<ListTask {...sendProps} />
 		</cmp.MainMenu>
 	)
 }

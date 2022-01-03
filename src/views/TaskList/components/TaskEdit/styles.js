@@ -5,7 +5,7 @@ export const Container = styled.div`
 	align-items: flex-end;
 	margin: 20px 20px;
 	padding: 20px 20px;
-	border: 1px solid black;
+	border: 2px solid #700047;
 	border-radius: 10px;
 	`
 
@@ -18,16 +18,20 @@ export const Col = styled.div`
 export const Label = styled.div`
 	display: flex;
 	margin: 4px 4px;
+	font-size: 23px;
 `
 
 export const Input = styled.input`
-	
+	border-radius: 6px;
+	border: 1px solid #700047;
+	padding: 5px 150px 5px 10px;
+	background-color: #F2EFF1;
 `
 
 export const ButtonSave = styled.button`
 	border-radius: 8px;
 	border: 1px solid #E485C4;
-	padding: 4px 8px;
+	padding: 6px 10px;
 	background-color: #DF43AB;
 	color: white;
 
