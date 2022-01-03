@@ -7,6 +7,8 @@ import types from './types'
 
 function* edit({ current, data }) {}
 
+
+
 function* add(params) {
     // função que salva a lista das tarefas
 	try {
@@ -28,6 +30,7 @@ function* add(params) {
 
         // salva os dados da lista nova no estado ou reducer
 		yield put(actions.success(tasks))
+
 	} catch (error) {
         console.log(error)
     }
