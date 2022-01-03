@@ -4,34 +4,37 @@ import { takeEvery } from 'redux-saga/effects'
 import actions from './actions'
 import { store } from '../../app/store'
 import types from './types'
+import moment from 'moment'
 
-function* edit({ current, data }) {}
+function* edit({ current, data }) { }
 
 
 
 function* add(params) {
     // função que salva a lista das tarefas
-	try {
-        const {title} = params?.value
-		
+    try {
+        const { title } = params?.value
+        const id = moment().format('YMDhhmmsszz')
+
         // pega valor do estado dos reducers ou do navegador
-        const state = yield store.getState() 
-        
+        const state = yield store.getState()
+
         // pega valor da lista em data
-        const stateTask = state?.TASKS?.data || [] 
-		
+        const stateTask = state?.TASKS?.data || []
+
         const tasks = [...stateTask] // gera a lista 
 
         // adiciona o item novo na lista
-		tasks.push({
-			title,
-		})
+        tasks.push({
+            id,
+            title,
+        })
 
 
         // salva os dados da lista nova no estado ou reducer
-		yield put(actions.success(tasks))
+        yield put(actions.success(tasks))
 
-	} catch (error) {
+    } catch (error) {
         console.log(error)
     }
 }
