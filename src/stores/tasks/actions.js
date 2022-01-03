@@ -8,7 +8,7 @@ const getList = (data) => ({
 
 const add = (data) => ({
     type: types.states.add,
-    data
+    value: data
 })
 
 const edit = (data) => ({

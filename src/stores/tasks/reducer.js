@@ -5,7 +5,7 @@ const reduceState = (state = types.states.initial, action) => {
         case types.states.add: {
             return {
                 ...state,
-                data: { ...action.data },
+                value: action.value,
                 loading: true,
                 loaded: false,
                 error: false,
@@ -21,13 +21,10 @@ const reduceState = (state = types.states.initial, action) => {
             };
         }
         case types.states.success: {
-            const data = JSON.parse(
-                JSON.stringify({ ...state.data, ...action.data })
-            );
 
             return {
                 ...state,
-                data,
+                data:action.data,
                 loading: false,
                 loaded: true,
                 error: false,
