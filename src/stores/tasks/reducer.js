@@ -20,6 +20,16 @@ const reduceState = (state = types.states.initial, action) => {
                 error: false,
             };
         }
+
+        case types.states.remove: {
+            return {
+                ...state,
+                value: action.value,
+                loading: true,
+                loaded: false,
+                error: false,
+            };
+        }
         case types.states.success: {
 
             return {

@@ -36,7 +36,19 @@ const TaskEdit = (props) => {
         <ST.Container>
             <ST.Col>
                 <ST.Label>Tarefa</ST.Label>
-                <ST.Input name={'title'} type="text" placeholder="Descrição" onChange={onChange} value={dataForm?.title} />
+                <ST.Input
+                    name={'title'}
+                    type="text"
+                    placeholder="Descrição"
+                    onChange={onChange}
+                    value={dataForm?.title}
+                    onKeyPress={(event) => {
+                        if (event.charCode != 13) return
+                        onAddTask()
+                        setDataForm({ title: '' })
+
+                    }}
+                />
             </ST.Col>
 
             <ST.Col>

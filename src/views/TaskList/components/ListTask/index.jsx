@@ -1,6 +1,7 @@
 import { memo, useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import * as ST from './styles'
+import actions from '../../../../stores/actions'
 
 const ListTask = (props) => {
 
@@ -26,11 +27,25 @@ const ListTask = (props) => {
         <ST.Container>
             {Array.isArray(list) && list.map((row, key) => {
                 return (
-                    <ST.Item onClick={() => {
-                        setItemTaskEdit(row)
-                    }}>
-                        <ST.Label key={key}>{row.id}</ST.Label>
-                        <ST.Label key={key}>{row.title}</ST.Label>
+                    <ST.Item>
+                        <ST.Data
+                            onClick={() => {
+                                setItemTaskEdit(row)
+                            }}
+                        >
+
+                            <ST.Checkbox key={key}>
+                                <input type="checkbox" onChange={(params) => {
+                                    console.log(params)
+                                }} />
+                            </ST.Checkbox>
+                            <ST.Label key={key}>{row.title}</ST.Label>
+                        </ST.Data>
+                        <ST.Close
+                            onClick={() => {
+                                actions.tasks.remove(row)
+                            }}
+                        >x</ST.Close>
                     </ST.Item>
                 )
             })}

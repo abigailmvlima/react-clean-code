@@ -14,6 +14,7 @@ export const Container = styled.div`
 export const Item = styled.div`
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     border-bottom: 1px solid #700047;
     cursor: pointer;
 
@@ -29,5 +30,29 @@ export const Item = styled.div`
 export const Label = styled.div`
     display: flex;
     padding: 8px 8px;
-    font-size: 20px;
+    font-size: 25px;
+`
+export const Data = styled.div`
+    display: flex;
+    width: 50%;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+`
+export const Checkbox = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    & > input {
+        width: 25px;
+        height: 25px;
+        background-color: #000;
+    }    
+`
+export const Close = styled.div`
+   font-size: 24px;
+   font-weight: bold;
+   color: #700047;
+   padding: 8px 10px;
 `

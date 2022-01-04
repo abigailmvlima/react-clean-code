@@ -2,6 +2,7 @@ const states = {
     name: 'TASKS',
     add: 'TASKS_ADD',
     edit: 'TASKS_EDIT',
+    remove: 'TASKS_REMOVE',
     success: 'TASKS_SUCCESS',
     error: 'TASKS_ERROR',
     initial: {

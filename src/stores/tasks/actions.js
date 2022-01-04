@@ -16,6 +16,12 @@ const edit = (data) => ({
     value: data
 })
 
+//remove o item da lista
+const remove = (data) => ({
+    type: types.states.remove,
+    value: data
+})
+
 const success = (data) => ({
     type: types.states.success,
     data
@@ -38,6 +44,10 @@ export default {
 
     edit: (data) => {
         store.dispatch(edit(data))
+    },
+
+    remove: (data) => {
+        store.dispatch(remove(data))
     },
 
     success,
