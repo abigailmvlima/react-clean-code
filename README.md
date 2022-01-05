@@ -51,3 +51,23 @@
 # Sobre o import
     quando for importar um arquivo local em .js e o mesmo nao conter o export default e conter apenas export const no meio do codigo.
     realizar a importacao utilizando o * as - import * as nomeDeUtilizacao from 'enderecoDoArquivo'
+
+
+# Logica de programação
+
+    - if ou ternario
+
+    const entradaDados = 6
+    const idade = 6
+
+    // condição padrao
+    if (entradaDados == idade) {
+        fazAlgo .....
+        return retornaAlgo1
+    } else {
+        fazAlgo .....
+        return retornaAlgo2
+    }
+
+    // condição ternaria
+    return entradaDados == idade ? retornaAlgo1 : retornaAlgo2

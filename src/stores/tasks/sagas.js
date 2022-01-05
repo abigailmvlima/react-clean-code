@@ -97,7 +97,7 @@ function* checked(params) {
         // marca como executado
         const tasks = [
             ...stateTask.filter(f => f.id != params?.value?.id),
-            { ...row, checked: true }
+            { ...row, checked: row?.checked ? false : true }
         ]
 
         yield put(actions.success(tasks))

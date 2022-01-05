@@ -1,7 +1,7 @@
 const states = {
-    name: 'NAVEGATE',
-    success: 'NAVEGATE_SUCCESS',
-    error: 'NAVEGATE_ERROR',
+    name: 'NAVIGATE',
+    success: 'NAVIGATE_SUCCESS',
+    error: 'NAVIGATE_ERROR',
     initial: {
         loading: false,
         loaded: true,

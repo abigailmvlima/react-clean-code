@@ -32,6 +32,12 @@ const TaskEdit = (props) => {
         }
     }
 
+    const onDataClear = () => {
+        setDataForm({ id: null, title: '', checked: false })
+        setTypeEdit(false)
+    }
+
+
     return (
         <ST.Container>
             <ST.Col>
@@ -42,11 +48,15 @@ const TaskEdit = (props) => {
                     placeholder="Descrição"
                     onChange={onChange}
                     value={dataForm?.title}
+                    onKeyUp={(event) => {
+                        if (event.keyCode == 27) {
+                            onDataClear()
+                        }
+                    }}
                     onKeyPress={(event) => {
                         if (event.charCode != 13) return
                         onAddTask()
-                        setDataForm({ title: '' })
-
+                        onDataClear()
                     }}
                 />
             </ST.Col>

@@ -34,13 +34,18 @@ const TaskList = () => {
 		<cmp.MainMenu>
 			<ST.Container>
 				<TaskEdit {...sendProps} />
-				<ST.TaskToDo>
+				<ST.TaskContainer>
+					<ST.TaskTitle>
+						Lista
+					</ST.TaskTitle>
 					<ListTask {...sendProps} data={list.filter(f => !f.checked)} />
-				</ST.TaskToDo>
-				<ST.TaskPerformed>
+				</ST.TaskContainer>
+				<ST.TaskContainer>
+					<ST.TaskTitle>
+						Executadas
+					</ST.TaskTitle>
 					<ListTask {...sendProps} data={list.filter(f => !!f.checked)} />
-				</ST.TaskPerformed>
-
+				</ST.TaskContainer>
 			</ST.Container>
 		</cmp.MainMenu>
 	)

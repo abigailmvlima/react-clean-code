@@ -3,12 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
     display: flex;
     flex-direction: column;
-    margin: 20px 20px;
-	padding: 20px 20px;
-	border: 1px solid black;
-	border-radius: 10px;
     padding-bottom: 30px;
-    border: 2px solid #700047;
 `
 
 export const Item = styled.div`
@@ -20,6 +15,7 @@ export const Item = styled.div`
 
 export const Label = styled.div`
     display: flex;
+    width: 100%;
     padding: 8px 8px;
     font-size: 25px;
 `
@@ -46,10 +42,10 @@ export const Checkbox = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-right: 10px;
     & > input {
         width: 25px;
         height: 25px;
-        background-color: #000;
     }    
 `
 export const Close = styled.div`

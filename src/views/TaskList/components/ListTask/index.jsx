@@ -15,19 +15,20 @@ const ListTask = (props) => {
         <ST.Container>
             {Array.isArray(list) && list.map((row, key) => {
                 return (
-                    <ST.Item>
-                        <ST.Data
-                            onClick={() => {
-                                setItemTaskEdit(row)
-                            }}
-                        >
-
+                    <ST.Item key={key}>
+                        <ST.Data>
                             <ST.Checkbox key={key}>
                                 <input type="checkbox" onChange={(params) => {
                                     actions.tasks.checked(row)
-                                }} />
+                                }}
+                                    checked={row.checked}
+                                />
                             </ST.Checkbox>
-                            <ST.Label key={key}>{row.title}</ST.Label>
+                            <ST.Label
+                                onClick={() => {
+                                    setItemTaskEdit(row)
+                                }}
+                            >{row.title}</ST.Label>
                         </ST.Data>
                         <ST.Close
                             onClick={() => {
