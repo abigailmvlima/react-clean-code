@@ -63,7 +63,7 @@ function* add(params) {
 
         // adiciona o item novo na lista
         tasks.push({
-            id,
+            id: id || 1,
             title,
         })
 
@@ -88,9 +88,29 @@ function* remove(params) {
     }
 }
 
+function* checked(params) {
+    try {
+        const state = yield store.getState()
+        const stateTask = state?.TASKS?.data || []
+        const row = params.value
+
+        // marca como executado
+        const tasks = [
+            ...stateTask.filter(f => f.id != params?.value?.id),
+            { ...row, checked: true }
+        ]
+
+        yield put(actions.success(tasks))
+
+    } catch (error) {
+        console.log(error)
+    }
+}
+
 
 export default [
     takeEvery(types.states.edit, edit),
     takeEvery(types.states.add, add),
-    takeEvery(types.states.remove, remove)
+    takeEvery(types.states.remove, remove),
+    takeEvery(types.states.checked, checked)
 ]

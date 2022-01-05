@@ -22,6 +22,12 @@ const remove = (data) => ({
     value: data
 })
 
+// marca o item da lista como executado
+const checked = (data) => ({
+    type: types.states.checked,
+    value: data
+})
+
 const success = (data) => ({
     type: types.states.success,
     data
@@ -48,6 +54,10 @@ export default {
 
     remove: (data) => {
         store.dispatch(remove(data))
+    },
+
+    checked: (data) => {
+        store.dispatch(checked(data))
     },
 
     success,

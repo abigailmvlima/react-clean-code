@@ -40,3 +40,14 @@
 	} catch (error) {
         console.log(error)
     }
+
+# Reducer
+    É o estado da aplicacao, onde e possivel guardar os dados e manipulalos podendo ser acessivel de qualquer lugar da aplicacao ou sistema.
+    Os dados podem ser recuperados atraves do hook chamado userSelector() que faz parte do pacote importado react-redux.
+
+# Sagas
+    e conhecido como redux, que tem como funcionalidade o gatilho por monitoramento de chaves para executar tarefas em segundo plano. 
+
+# Sobre o import
+    quando for importar um arquivo local em .js e o mesmo nao conter o export default e conter apenas export const no meio do codigo.
+    realizar a importacao utilizando o * as - import * as nomeDeUtilizacao from 'enderecoDoArquivo'

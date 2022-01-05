@@ -16,15 +16,6 @@ export const Item = styled.div`
     flex-direction: row;
     justify-content: space-between;
     border-bottom: 1px solid #700047;
-    cursor: pointer;
-
-    &:hover {
-        background-color: #F3E2ED;
-    }
-
-    &:active {
-        background-color: #F3C0E2;
-        }
 `
 
 export const Label = styled.div`
@@ -34,10 +25,21 @@ export const Label = styled.div`
 `
 export const Data = styled.div`
     display: flex;
-    width: 50%;
+    width: 100%;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    cursor: pointer;
+    padding: 0 15px;
+
+
+    &:hover {
+        background-color: #F3E2ED;
+    }
+
+    &:active {
+        background-color: #F3C0E2;
+        }
 `
 export const Checkbox = styled.div`
     display: flex;
@@ -55,4 +57,5 @@ export const Close = styled.div`
    font-weight: bold;
    color: #700047;
    padding: 8px 10px;
+   cursor: pointer;
 `

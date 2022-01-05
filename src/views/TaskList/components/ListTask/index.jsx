@@ -1,27 +1,15 @@
 import { memo, useState, useEffect } from 'react'
-import { useSelector } from 'react-redux'
 import * as ST from './styles'
 import actions from '../../../../stores/actions'
 
 const ListTask = (props) => {
-
-    const { setItemTaskEdit } = props
-
+    const { setItemTaskEdit, data } = props
     const [list, setList] = useState()
-    const stateTasks = useSelector((state) => state.TASKS)
 
     useEffect(() => {
-        const { error, data } = stateTasks
+        setList(data)
+    }, [data])
 
-        if (error) {
-            setList([])
-            return
-        }
-
-        if (!data.length) return
-
-        setList(data || [])
-    }, [stateTasks])
 
     return (
         <ST.Container>
@@ -36,7 +24,7 @@ const ListTask = (props) => {
 
                             <ST.Checkbox key={key}>
                                 <input type="checkbox" onChange={(params) => {
-                                    console.log(params)
+                                    actions.tasks.checked(row)
                                 }} />
                             </ST.Checkbox>
                             <ST.Label key={key}>{row.title}</ST.Label>

@@ -3,6 +3,7 @@ const states = {
     add: 'TASKS_ADD',
     edit: 'TASKS_EDIT',
     remove: 'TASKS_REMOVE',
+    checked: 'TASKS_CHECKED',
     success: 'TASKS_SUCCESS',
     error: 'TASKS_ERROR',
     initial: {
