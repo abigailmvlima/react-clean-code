@@ -36,21 +36,18 @@ export const ColButton = styled.div`
 
 export const ButtonSave = styled.button`
 	border-radius: 8px;
-	border: 1px solid #E485C4;
-	padding: 6px 10px;
+	border: 1px solid;
+	padding: 6px 15px;
 	margin: 0 5px;
-	background-color: #DF43AB;
+	background-color: #B33388;
 	color: white;
 
 	&:hover {
-        background-color: #F3E2ED;
-		color: #DF43AB;
+        background-color: #D73EA4;
     }
 
     &:active {
-        background-color: #F3C0E2;
-		color: #DF43AB;
-
+        background-color: #EF72C5;
         }
 	
 `
@@ -58,7 +55,7 @@ export const ButtonSave = styled.button`
 export const ButtonCancel = styled.button`
 	border-radius: 8px;
 	border: 1px;
-	padding: 6px 10px;
+	padding: 6px 15px;
 	margin: 0 5px;
 	background-color: #741751;
 	color: white;
@@ -69,7 +66,7 @@ export const ButtonCancel = styled.button`
     }
 
     &:active {
-        background-color: #F3C0E2;
+        background-color: #EB93CE;
 		color: #DF43AB;
 
         }

@@ -56,6 +56,7 @@ export const Item = styled.div`
 export const Body = styled.div`
     display: flex;
     padding: 0 10px;
+    flex-direction: column;
 `
 
 

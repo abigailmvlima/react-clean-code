@@ -41,8 +41,12 @@ const TaskEdit = (props) => {
     const onDataClear = () => {
         setDataForm({ id: null, title: '', checked: false })
         setTypeEdit(false)
+        setStatusEdit(null)
     }
 
+    const onCancelTask = () => {
+        onDataClear()
+    }
 
     return (
         <ST.Container>
@@ -70,7 +74,7 @@ const TaskEdit = (props) => {
 
             <ST.ColButton>
                 <ST.ButtonSave onClick={onAddTask}>{typeEdit ? 'Salvar' : 'Adicionar'}</ST.ButtonSave>
-                <ST.ButtonCancel>Cancelar</ST.ButtonCancel>
+                <ST.ButtonCancel onClick={onCancelTask}>Cancelar</ST.ButtonCancel>
             </ST.ColButton>
         </ST.Container>
     )

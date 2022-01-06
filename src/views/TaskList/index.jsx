@@ -42,6 +42,7 @@ const TaskList = () => {
 
 	return (
 		<cmp.MainMenu>
+			<cmp.Header label={'lista de tarefas'} />
 			<ST.Container>
 				{!statusEdit ? (
 					<div>
