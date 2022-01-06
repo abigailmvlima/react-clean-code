@@ -10,6 +10,7 @@ const TaskList = () => {
 
 	const [itemTaskEdit, setItemTaskEdit] = useState()
 	const [list, setList] = useState([])
+	const [statusEdit, setStatusEdit] = useState(null)
 	const stateTasks = useSelector((state) => state.TASKS)
 
 	useEffect(() => {
@@ -27,26 +28,46 @@ const TaskList = () => {
 		setList(data || [])
 	}, [stateTasks])
 
-	const sendProps = { itemTaskEdit, setItemTaskEdit }
+	useEffect(() => {
+		if (!itemTaskEdit) return
+		setStatusEdit('edit')
+	}, [itemTaskEdit])
 
+	const sendProps = { itemTaskEdit, setItemTaskEdit, statusEdit, setStatusEdit }
+	const dataList = list.filter(f => !f.checked)
+	const dataListPerfomed = list.filter(f => !!f.checked)
+	const onAddList = () => {
+		setStatusEdit('add')
+	}
 
 	return (
 		<cmp.MainMenu>
 			<ST.Container>
-				<ST.Header></ST.Header>
-				<TaskEdit {...sendProps} />
-				<ST.TaskContainer>
-					<ST.TaskTitle>
-						Lista
-					</ST.TaskTitle>
-					<ListTask {...sendProps} data={list.filter(f => !f.checked)} />
-				</ST.TaskContainer>
-				<ST.TaskContainer>
-					<ST.TaskTitle>
-						Executadas
-					</ST.TaskTitle>
-					<ListTask {...sendProps} data={list.filter(f => !!f.checked)} />
-				</ST.TaskContainer>
+				{!statusEdit ? (
+					<div>
+						<ST.Header>
+							<ST.BtAdd onClick={onAddList}>Adicionar</ST.BtAdd>
+						</ST.Header>
+						{dataList.length ? (
+							<ST.TaskContainer>
+								<ST.TaskTitle>
+									Lista
+								</ST.TaskTitle>
+								<ListTask {...sendProps} data={dataList} />
+							</ST.TaskContainer>
+						) : (<></>)}
+						{dataListPerfomed.length ? (
+							<ST.TaskContainer>
+								<ST.TaskTitle>
+									Executadas
+								</ST.TaskTitle>
+								<ListTask {...sendProps} data={dataListPerfomed} />
+							</ST.TaskContainer>
+						) : (<></>)}
+					</div>
+				) : (
+					<TaskEdit {...sendProps} />
+				)}
 			</ST.Container>
 		</cmp.MainMenu>
 	)

@@ -71,3 +71,9 @@
 
     // condição ternaria
     return entradaDados == idade ? retornaAlgo1 : retornaAlgo2
+
+    para verificar se o conteudo de uma variavel é null ou vazio
+        utilizar o simbolo de !
+        
+        1- if (!nomeDaVariavel)        
+        2- !nomeDaVariavel ? ...: ...

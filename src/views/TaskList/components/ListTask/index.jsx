@@ -3,6 +3,8 @@ import * as ST from './styles'
 import actions from '../../../../stores/actions'
 
 const ListTask = (props) => {
+    // componente exibi a lista das tarefas
+
     const { setItemTaskEdit, data } = props
     const [list, setList] = useState()
 

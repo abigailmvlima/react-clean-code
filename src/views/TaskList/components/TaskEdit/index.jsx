@@ -1,21 +1,26 @@
-import { memo, useState, useEffect } from 'react'
+import { memo, useState, useEffect, useRef } from 'react'
 import * as ST from './styles'
 import actions from '../../../../stores/actions'
 
 const TaskEdit = (props) => {
-    const { itemTaskEdit } = props
+
+    // esta pagina edita o componente
+
+    const { itemTaskEdit, statusEdit, setStatusEdit } = props
     const [dataForm, setDataForm] = useState({})
     const [typeEdit, setTypeEdit] = useState(false)
+    const descriptionEdit = useRef()
 
     useEffect(() => {
-        // monitora caso haja alteracao em alguma parte do sistema
-        if (!itemTaskEdit) {
-            setTypeEdit(false)
-            return
+        if (!statusEdit) return
+        setTypeEdit(statusEdit == 'edit')
+        if (statusEdit == 'add') {
+            setDataForm({ id: null, title: '', checked: false })
+        } else {
+            setDataForm({ ...itemTaskEdit })
         }
-        setTypeEdit(true)
-        setDataForm({ ...itemTaskEdit })
-    }, [itemTaskEdit])
+        descriptionEdit.current.focus()
+    }, [statusEdit, itemTaskEdit])
 
     const onChange = (data) => {
         setDataForm({ ...dataForm, [data.target.name]: data.target.value })
@@ -30,6 +35,7 @@ const TaskEdit = (props) => {
         } else {
             actions.tasks.add(dataForm)
         }
+        setStatusEdit(null)
     }
 
     const onDataClear = () => {
@@ -43,6 +49,7 @@ const TaskEdit = (props) => {
             <ST.Col>
                 <ST.Label>Tarefa</ST.Label>
                 <ST.Input
+                    ref={descriptionEdit}
                     name={'title'}
                     type="text"
                     placeholder="Descrição"
@@ -61,9 +68,10 @@ const TaskEdit = (props) => {
                 />
             </ST.Col>
 
-            <ST.Col>
+            <ST.ColButton>
                 <ST.ButtonSave onClick={onAddTask}>{typeEdit ? 'Salvar' : 'Adicionar'}</ST.ButtonSave>
-            </ST.Col>
+                <ST.ButtonCancel>Cancelar</ST.ButtonCancel>
+            </ST.ColButton>
         </ST.Container>
     )
 }
