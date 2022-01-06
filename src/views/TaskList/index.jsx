@@ -33,6 +33,7 @@ const TaskList = () => {
 	return (
 		<cmp.MainMenu>
 			<ST.Container>
+				<ST.Header></ST.Header>
 				<TaskEdit {...sendProps} />
 				<ST.TaskContainer>
 					<ST.TaskTitle>

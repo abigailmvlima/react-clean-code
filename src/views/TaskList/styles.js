@@ -15,3 +15,7 @@ export const TaskTitle = styled.div`
     font-size: 22px;
     letter-spacing: 2px;
 `
+
+export const Header = styled.div`
+    display: flex;
+`
