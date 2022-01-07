@@ -4,7 +4,7 @@ export const Container = styled.div`
 	display: flex;
     flex-direction: column;
     width: 100%;
-    padding-top: 30px;
+    padding-top: 20px;
 `
 export const TaskContainer = styled.div`
     display: flex;
@@ -21,8 +21,8 @@ export const TaskTitle = styled.div`
 export const Header = styled.div`
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
-    margin: 10px 10px;
+    justify-content: space-between;
+    margin: 0 10px;
 `
 
 export const BtAdd = styled.div`
@@ -33,7 +33,7 @@ export const BtAdd = styled.div`
     cursor: pointer;
     color: #521039 ;
     letter-spacing: 1px;
-
+    
     &:hover {
         color: #BD2985;
     }

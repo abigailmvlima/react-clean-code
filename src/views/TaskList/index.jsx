@@ -42,18 +42,18 @@ const TaskList = () => {
 
 	return (
 		<cmp.MainMenu>
-			<cmp.Header label={'lista de tarefas'} />
+			<cmp.Header label={'Lista de Tarefas'} />
 			<ST.Container>
 				{!statusEdit ? (
 					<div>
-						<ST.Header>
-							<ST.BtAdd onClick={onAddList}>Adicionar</ST.BtAdd>
-						</ST.Header>
 						{dataList.length ? (
 							<ST.TaskContainer>
-								<ST.TaskTitle>
-									Lista
-								</ST.TaskTitle>
+								<ST.Header>
+									<ST.TaskTitle>
+										Lista
+									</ST.TaskTitle>
+									<ST.BtAdd onClick={onAddList}>Adicionar</ST.BtAdd>
+								</ST.Header>
 								<ListTask {...sendProps} data={dataList} />
 							</ST.TaskContainer>
 						) : (<></>)}
