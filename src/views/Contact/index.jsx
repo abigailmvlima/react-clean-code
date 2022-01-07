@@ -1,4 +1,4 @@
-import { memo } from 'react'
+import { memo, useState } from 'react'
 
 import * as cmp from '../../components'
 import * as ST from './styles'
@@ -11,6 +11,14 @@ const InfoLabel = [
 ]
 
 const Contact = () => {
+
+    const [forms, setForms] = useState({ name: '' })
+
+    const onChangeForms = (e) => {
+        // setForms({...forms, })
+
+    }
+
     return (
         <cmp.MainMenu>
             <cmp.Header label={'Contato'} />
@@ -22,7 +30,13 @@ const Contact = () => {
                         )
                     })}
                 </ST.ColInfo>
-                <ST.ColForm>Form</ST.ColForm>
+                <ST.ColForm>
+                    <cmp.Forms.Input
+                        label={'Nome Completo'}
+                        value={forms?.name}
+                        onChange={onChangeForms}
+                    />
+                </ST.ColForm>
             </ST.Container>
         </cmp.MainMenu>
 

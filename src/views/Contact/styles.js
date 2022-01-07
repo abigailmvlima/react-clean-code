@@ -19,4 +19,5 @@ export const ColForm = styled.div`
     background-color: #0DD;
     width: 50%;
     margin-left: 10px;
+    flex-direction: column;
 `
