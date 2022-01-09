@@ -16,7 +16,6 @@ export const InfoLabel = styled.div`
 
 export const ColForm = styled.div`
     display: flex;
-    background-color: #0DD;
     width: 50%;
     margin-left: 10px;
     flex-direction: column;

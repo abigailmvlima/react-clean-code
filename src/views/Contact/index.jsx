@@ -36,6 +36,19 @@ const Contact = () => {
                         value={forms?.name}
                         onChange={onChangeForms}
                     />
+                    
+                    <cmp.Forms.Input
+                        label={'Endereço de e-mail'}
+                        value={forms?.mail}
+                        onChange={onChangeForms}
+                    />
+                    
+                    <cmp.Forms.Input
+                        label={'Telefone'}
+                        value={forms?.phone}
+                        onChange={onChangeForms}
+                    />
+                    <cmp.Button />
                 </ST.ColForm>
             </ST.Container>
         </cmp.MainMenu>

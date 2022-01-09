@@ -7,7 +7,7 @@ const Input = ({ label, value, onChange }) => {
         <ST.Container>
             <ST.Label>{label}</ST.Label>
             <ST.InputControll>
-                <ST.Input />
+                <ST.Input value={'teste'} />
             </ST.InputControll>
         </ST.Container>
     )
