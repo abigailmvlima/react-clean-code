@@ -26,6 +26,11 @@ const TaskList = () => {
 		}
 
 		setList(data || [])
+		
+		if (!data.length) {
+			setStatusEdit('add')
+		}
+		
 	}, [stateTasks])
 
 	useEffect(() => {
@@ -46,6 +51,7 @@ const TaskList = () => {
 			<ST.Container>
 				{!statusEdit ? (
 					<div>
+						{console.log(dataList)}
 						{dataList.length ? (
 							<ST.TaskContainer>
 								<ST.Header>
