@@ -60,10 +60,9 @@ const Contact = () => {
                             </ST.ColFormRow>
                         )
                     })}
-
-
-
-                    <cmp.Button />
+                    <ST.ColFormBT>
+                        <cmp.Button />
+                    </ST.ColFormBT>
                 </ST.ColForm>
             </ST.Container>
         </cmp.MainMenu>

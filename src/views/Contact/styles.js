@@ -25,3 +25,9 @@ export const ColFormRow = styled.div`
     flex-direction: column;
     padding: 8px 10px;
 `
+export const ColFormBT = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 8px 12px;
+`
