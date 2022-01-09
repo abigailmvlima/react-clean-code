@@ -20,3 +20,8 @@ export const ColForm = styled.div`
     margin-left: 10px;
     flex-direction: column;
 `
+export const ColFormRow = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding: 8px 10px;
+`

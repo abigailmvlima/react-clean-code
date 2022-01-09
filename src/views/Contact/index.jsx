@@ -14,6 +14,21 @@ const Contact = () => {
 
     const [forms, setForms] = useState({ name: '' })
 
+    const formList = [
+        {
+            name:'name',
+            label: 'Nome Completo' 
+        },
+        {
+            name: 'mail',
+            label: 'Endereço de e-mail'
+        },
+        {
+            name: 'phone',
+            label: 'Número de Telefone'
+        }
+    ]
+
     const onChangeForms = (e) => {
         // setForms({...forms, })
 
@@ -31,23 +46,23 @@ const Contact = () => {
                     })}
                 </ST.ColInfo>
                 <ST.ColForm>
-                    <cmp.Forms.Input
-                        label={'Nome Completo'}
-                        value={forms?.name}
-                        onChange={onChangeForms}
-                    />
-                    
-                    <cmp.Forms.Input
-                        label={'Endereço de e-mail'}
-                        value={forms?.mail}
-                        onChange={onChangeForms}
-                    />
-                    
-                    <cmp.Forms.Input
-                        label={'Telefone'}
-                        value={forms?.phone}
-                        onChange={onChangeForms}
-                    />
+
+
+                    {formList.map((field, i) => {
+                        return (
+                            <ST.ColFormRow>
+                                <cmp.Forms.Input
+                                    name={field?.name}
+                                    label={field?.label}
+                                    value={forms?.name}
+                                    onChange={onChangeForms}
+                                />
+                            </ST.ColFormRow>
+                        )
+                    })}
+
+
+
                     <cmp.Button />
                 </ST.ColForm>
             </ST.Container>
