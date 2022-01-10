@@ -77,3 +77,11 @@
         
         1- if (!nomeDaVariavel)        
         2- !nomeDaVariavel ? ...: ...
+	
+	
+	
+	
+	![2022-01-09 23_16_23-Window](https://user-images.githubusercontent.com/81816418/148711381-0e7b7074-691a-4c31-b527-8dd7d24b2010.png)
+
+
+	
