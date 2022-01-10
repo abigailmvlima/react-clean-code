@@ -52,7 +52,6 @@ const TaskList = () => {
 			<ST.Container>
 				{!statusEdit ? (
 					<div>
-						{console.log(dataList)}
 						{dataList.length ? (
 							<ST.TaskContainer>
 								<ST.Header>
