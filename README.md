@@ -1,3 +1,6 @@
+# Sobre a aplicação
+	Este projeto foi destinado ao aprendizado do Redux, Reducer, Store, Persistor, Styled-components, Sagas, Dispacth de ações, inclusão de imagens e manipulação de css.
+
 # Tipos de Dados
     - string  = 'nome'
     - number  = 1234
