@@ -7,7 +7,6 @@ import { ListTask, TaskEdit } from './components'
 import * as ST from './styles'
 
 const TaskList = () => {
-
 	const [itemTaskEdit, setItemTaskEdit] = useState()
 	const [list, setList] = useState([])
 	const [statusEdit, setStatusEdit] = useState(null)
@@ -26,11 +25,10 @@ const TaskList = () => {
 		}
 
 		setList(data || [])
-		
+
 		if (!data.length) {
 			setStatusEdit('add')
 		}
-		
 	}, [stateTasks])
 
 	useEffect(() => {
@@ -39,15 +37,18 @@ const TaskList = () => {
 	}, [itemTaskEdit])
 
 	const sendProps = { itemTaskEdit, setItemTaskEdit, statusEdit, setStatusEdit }
-	const dataList = list.filter(f => !f.checked)
-	const dataListPerfomed = list.filter(f => !!f.checked)
+	const dataList = list.filter((f) => !f.checked)
+	const dataListPerfomed = list.filter((f) => !!f.checked)
 	const onAddList = () => {
 		setStatusEdit('add')
 	}
 
 	return (
 		<cmp.MainMenu>
-			<cmp.Header label={'Lista de Tarefas'} />
+			<cmp.Header
+				label={'Lista de Tarefas'}
+				childRight={!statusEdit && <ST.BtAdd onClick={onAddList}>Adicionar</ST.BtAdd>}
+			/>
 			<ST.Container>
 				{!statusEdit ? (
 					<div>
@@ -55,22 +56,21 @@ const TaskList = () => {
 						{dataList.length ? (
 							<ST.TaskContainer>
 								<ST.Header>
-									<ST.TaskTitle>
-										Lista
-									</ST.TaskTitle>
-									<ST.BtAdd onClick={onAddList}>Adicionar</ST.BtAdd>
+									<ST.TaskTitle>Lista</ST.TaskTitle>
 								</ST.Header>
 								<ListTask {...sendProps} data={dataList} />
 							</ST.TaskContainer>
-						) : (<></>)}
+						) : (
+							<></>
+						)}
 						{dataListPerfomed.length ? (
 							<ST.TaskContainer>
-								<ST.TaskTitle>
-									Executadas
-								</ST.TaskTitle>
+								<ST.TaskTitle>Executadas</ST.TaskTitle>
 								<ListTask {...sendProps} data={dataListPerfomed} />
 							</ST.TaskContainer>
-						) : (<></>)}
+						) : (
+							<></>
+						)}
 					</div>
 				) : (
 					<TaskEdit {...sendProps} />

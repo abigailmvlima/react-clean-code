@@ -7,7 +7,7 @@ export const Container = styled.div`
 
 export const Label = styled.div`
     display: flex;
-    color: #7D013F;
+    color: #585858;
     letter-spacing: 1px;
 `
 
